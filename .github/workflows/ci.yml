@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  audit:
+    # The casks need macOS 27 to install, so this checks them without installing.
+    runs-on: macos-latest
+    steps:
+      - name: Set up Homebrew
+        id: set-up-homebrew
+        uses: Homebrew/actions/setup-homebrew@main
+
+      - name: Style
+        run: brew style hammerspoon/tap
+
+      - name: Audit
+        run: brew audit --strict --online --tap hammerspoon/tap
+
+      - name: Livecheck
+        run: brew livecheck --tap hammerspoon/tap
+
+      - name: Download and check sha256
+        run: |
+          for cask in Casks/*.rb; do
+            brew fetch --cask --force "hammerspoon/tap/$(basename "$cask" .rb)"
+          done
