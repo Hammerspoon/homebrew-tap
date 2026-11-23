@@ -15,7 +15,7 @@ cask "hammerspoon2" do
   end
 
   auto_updates true
-  depends_on macos: ">= :golden_gate"
+  depends_on macos: :golden_gate
 
   app "Hammerspoon 2.app"
   binary "#{appdir}/Hammerspoon 2.app/Contents/MacOS/hs2"
