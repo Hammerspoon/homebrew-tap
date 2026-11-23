@@ -23,7 +23,6 @@ cask "hammerspoon2" do
   uninstall quit: "net.tenshu.Hammerspoon-2"
 
   zap trash: [
-    "~/.config/Hammerspoon2",
     "~/Library/Caches/net.tenshu.Hammerspoon-2",
     "~/Library/Containers/net.tenshu.Hammerspoon-2.HammerspoonOSAScriptHelper",
     "~/Library/HTTPStorages/net.tenshu.Hammerspoon-2",
