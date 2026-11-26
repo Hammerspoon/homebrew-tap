@@ -1,7 +1,7 @@
 cask "hammerspoon2" do
   # Hammerspoon2's scripts/release/release.sh bumps version and sha256 when it publishes a release.
-  version "1.0.0-beta.3"
-  sha256 "5da15a5888afcef6f9951147a7a800d2bb3a60d4ce138a089e35a334a7a7b12c"
+  version "1.0.0-beta.4"
+  sha256 "6b56f0f11f31a1a5033895013c556a4a7ae2a88179f8abb80e4d59cfc6e9e35b"
 
   url "https://github.com/Hammerspoon/Hammerspoon2/releases/download/#{version}/Hammerspoon-2-#{version}.zip"
   name "Hammerspoon 2"
